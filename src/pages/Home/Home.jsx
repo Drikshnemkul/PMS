@@ -19,15 +19,19 @@ const Home = () => {
   return (
     <>
       <Navbar />
-      {products.map((product) => {
-        return (
-          <div key={product.id} className="card">
-            <img src={product.productImage} alt="product image" />
-            <h2 className="Product-name">{product.productName}</h2>
-            <p className="product-description">{product.productDescription}</p>
-          </div>
-        );
-      })}
+      <div className="card-container">
+        {products.map((product) => {
+          return (
+            <div key={product.id} className="card">
+              <img src={product.productImage} alt="product image" />
+              <h2 className="Product-name">{product.productName}</h2>
+              <p className="product-description">
+                {product.productDescription}
+              </p>
+            </div>
+          );
+        })}
+      </div>
     </>
   );
 };

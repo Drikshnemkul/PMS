@@ -1,18 +1,17 @@
 import React from "react";
+import { Link, useNavigate } from "react-router-dom";
 import "./Navbar.css";
 const Navbar = () => {
+  //   const navigate = useNavigate();
   return (
     <div className="navbar" id="myNavbar">
-      <a href="#" class="logo">
+      <a href="#" className="logo">
         Logo
       </a>
-      <a href="#">Home</a>
-      <a href="#">About</a>
-      <a href="#">Services</a>
-      <a href="#">Contact</a>
-      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-        &#9776;
-      </a>
+      <Link to="/">Home</Link>
+      {/* <a href="/addProduct">Add product</a> */}
+      <Link to="/addProduct">Add Product</Link>
+      {/* <button onClick={() => navigate("/addProduct")}>Add Product</button> */}
     </div>
   );
 };

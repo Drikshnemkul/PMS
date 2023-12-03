@@ -2,8 +2,10 @@ import React, { useEffect, useState } from "react";
 import "./Home.css";
 import Navbar from "../../components/Navbar/Navbar";
 import axios from "axios";
+import { Link, useNavigate } from "react-router-dom";
 
 const Home = () => {
+  // const navigate = useNavigate();
   const [products, setProducts] = useState([]);
   const getProducts = async () => {
     const response = await axios.get(
@@ -28,6 +30,11 @@ const Home = () => {
               <p className="product-description">
                 {product.productDescription}
               </p>
+              <p className="product-price">Rs {product.productPrice}</p>
+              <Link to={`/singleProduct/${product.id}`}>See More</Link>
+              {/* <button onClick={() => navigate("/singleProduct")}>
+                See More
+              </button> */}
             </div>
           );
         })}
